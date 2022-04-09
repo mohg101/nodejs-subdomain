@@ -3,6 +3,8 @@ const { getUserDetails } = require('../controllers/userController');
 const router = require('express').Router();
 
 router.use((req, res, next) => {
+    console.log(req.url)
+    console.log(req.subdomains)
     if (!req.subdomains.length || req.subdomains.slice(-1)[0] === 'www') 
         return next();
 
